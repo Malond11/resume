@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mantas Alonderis - Resume</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Roboto', sans-serif;
+            font-size: 15px;
+            line-height: 1.5;
+            color: #333;
+            background-color: #fff;
+        }
+        
+        .resume-container {
+            display: flex;
+            max-width: 1200px;
+            margin: 0 auto;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        /* Header Section */
+        .header {
+            background-color: #335977;
+            color: white;
+            padding: 30px;
+            text-align: center;
+        }
+        
+        .header h1 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 32px;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+        
+        /* Sidebar */
+        .sidebar {
+            width: 30%;
+            background-color: #edf4fa;
+            padding: 30px;
+        }
+        
+        /* Main Content */
+        .main-content {
+            width: 70%;
+            padding: 30px;
+        }
+        
+        /* Section Styles */
+        .section {
+            margin-bottom: 25px;
+        }
+        
+        .section-title {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 18px;
+            font-weight: 600;
+            color: #3b5998;
+            margin-bottom: 15px;
+            padding-bottom: 5px;
+            border-bottom: 2px solid #3b5998;
+        }
+        
+        /* Contact Info */
+        .contact-info {
+            margin-bottom: 20px;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+        
+        .contact-item i {
+            width: 20px;
+            margin-right: 10px;
+            color: #335977;
+        }
+        
+        /* Skills */
+        .skills-list {
+            list-style-type: none;
+        }
+        
+        .skills-list li {
+            margin-bottom: 8px;
+            position: relative;
+        }
+        
+        .skill-category {
+            font-weight: 500;
+            margin-bottom: 5px;
+            color: #335977;
+        }
+        
+        /* Experience */
+        .experience-item {
+            margin-bottom: 25px;
+            break-inside: avoid;
+        }
+        
+        .experience-header {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 10px;
+        }
+        
+        .job-title {
+            font-weight: 500;
+            font-size: 18px;
+            color: #335977;
+        }
+        
+        .company {
+            font-weight: 500;
+        }
+        
+        .date {
+            color: #666;
+            font-style: italic;
+        }
+        
+        .experience-content ul {
+            padding-left: 20px;
+            margin-top: 10px;
+        }
+        
+        .experience-content li {
+            margin-bottom: 8px;
+        }
+        
+        /* Projects */
+        .projects-section {
+            margin-top: 30px;
+        }
+        
+        .project-item {
+            padding: 15px;
+            margin-bottom: 20px;
+            border-left: 4px solid #3b5998;
+            break-inside: avoid;
+        }
+        
+        .project-item:nth-child(odd) {
+            background-color: #f9f9f9;
+        }
+        
+        .project-item:nth-child(even) {
+            background-color: #f0f7ff;
+        }
+        
+        .project-title {
+            font-weight: 500;
+            font-size: 17px;
+            color: #335977;
+            margin-bottom: 8px;
+        }
+        
+        .project-description {
+            margin-bottom: 10px;
+        }
+        
+        .project-skills {
+            display: flex;
+            flex-wrap: wrap;
+            margin-top: 10px;
+        }
+        
+        .project-skill {
+            background-color: #335977;
+            color: white;
+            font-size: 12px;
+            padding: 3px 8px;
+            border-radius: 12px;
+            margin-right: 5px;
+            margin-bottom: 5px;
+        }
+        
+        /* Education */
+        .education-item {
+            margin-bottom: 15px;
+        }
+        
+        .degree {
+            font-weight: 500;
+        }
+        
+        .school {
+            margin-bottom: 5px;
+        }
+        
+        /* Profile Summary */
+        .profile-summary {
+            margin-bottom: 30px;
+            line-height: 1.6;
+        }
+        
+        /* Languages */
+        .languages-list {
+            list-style-type: none;
+        }
+        
+        .languages-list li {
+            margin-bottom: 5px;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .resume-container {
+                flex-direction: column;
+            }
+            
+            .sidebar, .main-content {
+                width: 100%;
+            }
+        }
+        
+        /* Print Optimization */
+        @media print {
+            body {
+                background-color: white;
+                font-size: 12pt;
+            }
+            
+            .resume-container {
+                box-shadow: none;
+                max-width: 100%;
+            }
+            
+            .experience-item, .project-item, .education-item {
+                page-break-inside: avoid;
+                break-inside: avoid;
+            }
+            
+            .header {
+                background-color: #335977 !important;
+                color: white !important;
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+            
+            .sidebar {
+                background-color: #edf4fa !important;
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+            
+            .project-item:nth-child(odd) {
+                background-color: #f9f9f9 !important;
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+            
+            .project-item:nth-child(even) {
+                background-color: #f0f7ff !important;
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+            
+            .project-skill {
+                background-color: #335977 !important;
+                color: white !important;
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+            
+            @page {
+                size: portrait;
+                margin: 0.5cm;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="resume-container">
+        <!-- Left Sidebar -->
+        <div class="sidebar">
+            <!-- Contact Information -->
+            <div class="section">
+                <h2 class="section-title">Contact Information</h2>
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>Philadelphia, Pennsylvania, USA</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <span>mantas.alonderis@gmail.com</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <span>(267) 777-7150</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fab fa-linkedin"></i>
+                        <span>in/mantas-alonderis</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Education -->
+            <div class="section">
+                <h2 class="section-title">Education</h2>
+                <div class="education-item">
+                    <div class="degree">Bachelor's in Telecommunications Engineering</div>
+                    <div class="school">Vilnius Gediminas Technical University</div>
+                    <div class="minor">Minor in Electronics Engineering</div>
+                    <div class="location-date">Vilnius, Lithuania | 2021</div>
+                    <div class="gpa">GPA: 3.7</div>
+                </div>
+            </div>
+            
+            <!-- Skills -->
+            <div class="section">
+                <h2 class="section-title">Skills</h2>
+                <ul class="skills-list">
+                    <li>
+                        <div class="skill-category">Technical Skills</div>
+                        <div>Embedded Systems, Signal Processing, AWS (Lambda, DynamoDB, S3, SNS, CloudWatch, Cloudformation), Terraform, Apache Spark, Python, SQL, Elasticsearch, Kibana, DataDog, Grafana, GitHub Actions, Docker, Kubernetes</div>
+                    </li>
+                    <li>
+                        <div class="skill-category">Data Management</div>
+                        <div>Data Quality Monitoring, Anomaly Detection, Log Analysis, Data Lineage Tracking, SLA Management</div>
+                    </li>
+                    <li>
+                        <div class="skill-category">Data Engineering</div>
+                        <div>ETL Pipelines, Data Warehousing, Real-time Data Processing</div>
+                    </li>
+                    <li>
+                        <div class="skill-category">Domain Expertise</div>
+                        <div>Broadband Systems, Network Protocols, IoT Data Analytics</div>
+                    </li>
+                    <li>
+                        <div class="skill-category">Soft Skills</div>
+                        <div>Leadership, Communication, Problem-solving, Decision-making, Cross-functional Collaboration</div>
+                    </li>
+                </ul>
+            </div>
+            
+            <!-- Languages -->
+            <div class="section">
+                <h2 class="section-title">Languages</h2>
+                <ul class="languages-list">
+                    <li>English</li>
+                    <li>Russian</li>
+                    <li>Lithuanian</li>
+                </ul>
+            </div>
+        </div>
+        
+        <!-- Main Content -->
+        <div class="main-content">
+            <!-- Header/Name -->
+            <div class="header">
+                <h1>Mantas Alonderis</h1>
+                <p>Data Observability Engineer</p>
+            </div>
+            
+            <!-- Profile Summary -->
+            <div class="section">
+                <h2 class="section-title">Professional Summary</h2>
+                <div class="profile-summary">
+                    Versatile Software Development engineer adept at building and maintaining robust, scalable infrastructure and data solutions. Proficient in AWS, Terraform, and observability tools (DataDog, Elasticsearch). Experienced in implementing CI/CD pipelines, optimizing system reliability, and architecting data workflows. Excels in process automation and resolving complex operational issues. Leverages unique background in embedded systems to enhance performance and reliability across infrastructure and data ecosystems.
+                </div>
+            </div>
+            
+            <!-- Experience -->
+            <div class="section">
+                <h2 class="section-title">Professional Experience</h2>
+                
+                <!-- Job 1 -->
+                <div class="experience-item">
+                    <div class="experience-header">
+                        <div>
+                            <div class="job-title">Data Observability Engineer</div>
+                            <div class="company">Comcast | Philadelphia</div>
+                        </div>
+                        <div class="date">August 2023 - Present</div>
+                    </div>
+                    <div class="experience-content">
+                        <ul>
+                            <li>Spearheaded transition from embedded systems to data observability, applying expertise in data analysis and system optimization.</li>
+                            <li>Engineered data collection and analysis processes for edge devices, elevating data quality by 40%.</li>
+                            <li>Architected advanced anomaly detection algorithms, cutting false positive alerts by 60%.</li>
+                            <li>Led collaboration between hardware and data science teams, boosting system performance by 25%.</li>
+                            <li>Pioneered application of machine learning techniques from signal processing, accelerating system failure detection by 30%.</li>
+                            <li>Established Git and GitHub workflows for source code management, enhancing code quality and team collaboration.</li>
+                            <li>Optimized CI/CD pipelines using Github Actions or AWS CodePipeline, reducing deployment times by 40% and increasing release frequency.</li>
+                            <li>Designed and implemented comprehensive data observability solutions, decreasing data-related incidents by 35%.</li>
+                            <li>Built AWS, Terraform, and DataDog monitoring systems, achieving 99.9% visibility into critical data pipelines.</li>
+                            <li>Developed real-time data health dashboards and KPI tracking systems, slashing issue detection time by 50%.</li>
+                            <li>Implemented end-to-end data lineage tracking, expediting root cause analysis and enhancing data governance.</li>
+                            <li>Led mentorship programs on data observability best practices, cultivating a culture of data quality and reliability.</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Job 2 -->
+                <div class="experience-item">
+                    <div class="experience-header">
+                        <div>
+                            <div class="job-title">Broadband Embedded System Analysis and Triage Squad Lead</div>
+                            <div class="company">Comcast | Philadelphia, PA</div>
+                        </div>
+                        <div class="date">January 2022 - July 2023</div>
+                    </div>
+                    <div class="experience-content">
+                        <ul>
+                            <li>Led WiFi service optimization team, automating triage processes to boost productivity by 15%.</li>
+                            <li>Implemented QA processes for firmware stability, specializing in WiFi anomaly detection and resolution.</li>
+                            <li>Automated device performance data analysis workflows with SQL and Python scripts, reducing triage times by 10%.</li>
+                            <li>Developed Python scripts to automate WiFi anomaly triage, significantly enhancing squad efficiency.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Projects -->
+            <div class="section projects-section">
+                <h2 class="section-title">Key Projects</h2>
+                
+                <div class="project-item">
+                    <div class="project-title">Comprehensive Data Observability and Anomaly Detection System</div>
+                    <div class="company">Comcast | August 2023 - Present</div>
+                    <div class="project-description">
+                        <ul>
+                            <li>Architected monitoring infrastructure using Terraform, AWS services (CloudWatch, Lambda, SNS, SQS, S3), and Datadog.</li>
+                            <li>Implemented CI/CD pipelines with GitHub Actions, automating infrastructure and configuration updates.</li>
+                            <li>Optimized data pipelines using Apache Spark, enhancing large-scale data processing and analysis efficiency.</li>
+                            <li>Developed machine learning models for predictive analytics, improving trend forecasting accuracy.</li>
+                            <li>Integrated custom alerting mechanisms with messaging services via webhooks and APIs, enhancing incident response.</li>
+                            <li>Implemented Elasticsearch and Kibana for application-level logging and performance visualization.</li>
+                            <li>Slashed anomaly detection time by 60% and issue resolution time by 40% through advanced algorithms.</li>
+                            <li>Boosted system reliability by 25% with automated issue resolution and continuous monitoring.</li>
+                            <li>Achieved 99.99% uptime for critical data pipelines through robust infrastructure and efficient alerting mechanisms.</li>
+                        </ul>
+                    </div>
+                    <div class="project-skills">
+                        <span class="project-skill">Terraform</span>
+                        <span class="project-skill">AWS</span>
+                        <span class="project-skill">DataDog</span>
+                        <span class="project-skill">Apache Spark</span>
+                        <span class="project-skill">Machine Learning</span>
+                        <span class="project-skill">Elasticsearch</span>
+                        <span class="project-skill">Kibana</span>
+                        <span class="project-skill">CI/CD</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
